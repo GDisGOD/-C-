@@ -442,18 +442,29 @@
 //}
 //
 
+//
+//int main()
+//{
+//	//1
+//
+//
+//	{
+//		int a = 100;//2-创建
+//		printf("a=%d\n", a);
+//	}//
+//
+//	printf("a=%d\n", a);//err
+//
+//	return 0;
+//}
 
+
+typedef int* pint;
 int main()
 {
-	//1
-
-
-	{
-		int a = 100;//2-创建
-		printf("a=%d\n", a);
-	}//
-
-	printf("a=%d\n", a);//err
+	int a = 10;
+	int* pa = &a;
+	pint* pptr= &pa;
 
 	return 0;
 }
