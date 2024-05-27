@@ -277,25 +277,25 @@
 //#define FEMALE 5
 //#define SECRET 7
 
+
+enum Sex
+{
+	//该枚举类型的三种可能取值
+	//他们都是常量，被称为枚举常量
+	MALE=3,//0
+	FEMALE=5,
+	SECRET=7
+};
+
 //
-//enum Sex
-//{
-//	//该枚举类型的三种可能取值
-//	//他们都是常量，被称为枚举常量
-//	MALE=3,//0
-//	FEMALE=5,
-//	SECRET=7
-//};
-//
-//
-//int main()
-//{
-//	enum Sex sex1 = MALE;
-//	enum Sex sex2 = FEMALE;
-//	printf("%d\n", MALE);
-//	printf("%d\n", FEMALE);
-//	printf("%d\n", SECRET);
-//
-//	return 0;
-//}
-//
+int main()
+{
+	enum Sex sex1 = MALE;
+	enum Sex sex2 = FEMALE;
+	printf("%d\n", MALE);
+	printf("%d\n", FEMALE);
+	printf("%d\n", SECRET);
+
+	return 0;
+}
+
