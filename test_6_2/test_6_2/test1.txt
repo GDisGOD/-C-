@@ -1,0 +1,285 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include <stdio.h>
+
+//int main()
+//{
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "w");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2. 写文件
+//	fputs("I am a student\n", pf);
+//	fputs("are you ok??", pf);
+//
+//	//3. 关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2. 读文件
+//	char arr[20] = "xxxxxxxxxxxxx";
+//	fgets(arr, 10, pf);
+//	printf("%s\n", arr);
+//
+//	//3. 关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	char arr[20] = { 0 };
+//	fgets(arr, 20, stdin);
+//	fputs(arr, stdout);
+//
+//	return 0;
+//}
+//
+//struct S
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//
+//
+//int main()
+//{
+//	struct S s = { "lisi", 18, 88.0f };
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "w");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2. 写文件
+//	fprintf(pf,"%s %d %.1f", s.name, s.age, s.score);
+//	//printf("%s %d %f", name, age, score);
+//	//3. 关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	printf("hehe\n");
+//	printf("%d", 100);
+//	printf("%d %c", 100, 'x');
+//	printf("%d %c %f", 100, 'x', 3.14f);
+//
+//	return 0;
+//}
+//
+
+
+//
+//struct S
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+
+
+//int main()
+//{
+//	struct S s = {0};
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2. 读文件
+//	//scanf("%s %d %f", s.name, &(s.age), &(s.score));
+//	//从文件中读取信息，存放到s的各个成员中
+//	fscanf(pf, "%s %d %f", s.name, &(s.age), &(s.score));
+//
+//	//打印在屏幕上
+//	//printf("%s %d %.1f\n", s.name, s.age, s.score);
+//	fprintf(stdout, "%s %d %.1f\n", s.name, s.age, s.score);
+//
+//	//3. 关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+//struct S
+//{
+//	char name[20];
+//	int age;
+//	float score;
+//};
+//
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	struct S s = { "wangwu", 23, 66.6f };
+//	
+//	//临时变量
+//	struct S tmp = { 0 };
+//
+//	//将s中的各个数据转换成字符串，存放在arr中
+//	sprintf(arr, "%s %d %f", s.name, s.age, s.score);
+//	//printf("%s\n", arr);
+//
+//	//从字符串arr中提取格式化的数据，存放在tmp中
+//	sscanf(arr, "%s %d %f", tmp.name, &(tmp.age), &(tmp.score));
+//	printf("%s %d %f\n", tmp.name, tmp.age, tmp.score);
+//
+//	return 0;
+//}
+
+
+struct S
+{
+	char name[20];
+	int age;
+	float score;
+};
+//
+//int main()
+//{
+//	struct S s = { "cuihua", 25, 88.8f };
+//	//以二进制的形式写到文件中
+//
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "wb");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2.写文件
+//	fwrite(&s, sizeof(struct S), 1, pf);
+//
+//	//3.关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+//
+//int main()
+//{
+//	struct S s = {0};
+//	//读取二进制的信息写到文件中
+//
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "rb");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2.读文件
+//	fread(&s, sizeof(struct S), 1, pf);
+//
+//	printf("%s %d %f\n", s.name, s.age, s.score);
+//
+//	//3.关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
+//
+//int main()
+//{
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2.读文件
+//	int ch = 0;
+//	ch = fgetc(pf);//a
+//	printf("%c\n", ch);
+//	ch = fgetc(pf);//b
+//	printf("%c\n", ch);
+//
+//	//定位文件指针
+//	//fseek(pf, 4,SEEK_SET);
+//	//fseek(pf, 2, SEEK_CUR);
+//	fseek(pf, -2, SEEK_END);
+//	ch = fgetc(pf);//e
+//	printf("%c\n", ch);
+//
+//	//3.关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
+//
+//int main()
+//{
+//	//1. 打开文件
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//2.读文件
+//	int ch = 0;
+//	ch = fgetc(pf);//a
+//	printf("%c\n", ch);
+//	ch = fgetc(pf);//b
+//	printf("%c\n", ch);
+//
+//	//定位文件指针
+//	fseek(pf, -2, SEEK_END);
+//	ch = fgetc(pf);//e
+//	printf("%c\n", ch);
+//
+//	//输出文件指针相较于文件的起始位置的偏移量
+//	printf("%d\n", ftell(pf));
+//
+//	//将文件指针重新定位到文件的起始位置
+//	rewind(pf);
+//	ch = fgetc(pf);//a
+//	printf("%c\n", ch);
+//
+//	//3.关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+//拷贝文件
+//test1.txt    --->  test2.txt
